@@ -34,7 +34,7 @@ if(isset($_POST["submit"])){
                 while ($row = $stmt->fetch())
                 {
                     if($row["wachtwoord"] == $_POST["password"]) {
-                        setcookie("loggedInUser", $row["id"], time() + 60, "/"); //cookie for 1 day 86400
+                        setcookie("loggedInUser", $row["id"], time() + 86400, "/"); //cookie for 1 day 86400
                         header("Location: index.php");
                     } else {
                         echo "Wachtwoord is niet goed.";
