@@ -25,10 +25,11 @@ try {
     while ($row = $stmt->fetch())
     {
         echo "<h1>".$row["title"]." - ".$row["rating"]."</h1>";
-        if($row["has_won_awards"] == 1)
+        if($row["has_won_awards"] == 1) {
             echo "<b>Awards</b> Ja<br>";
-        else
+        } else {
             echo "<b>Awards</b> Nee<br>";
+        }
         echo "<b>Seasons</b> ".$row["seasons"]."<br>";
         echo "<b>Country</b> ".$row["land_uitkomst"]."<br>";
         echo "<b>Language</b> ".$row["taal"]."<br>";

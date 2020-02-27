@@ -23,7 +23,7 @@ $options = [
     PDO::ATTR_EMULATE_PREPARES   => false,
 ];
 
-if(isset($_POST["submit"])){
+if(isset($_POST["submit"])) {
     if(($_POST["username"] != "") && ($_POST["password"] != "")) {
         try {
             $pdo = new PDO($dsn, $user, $pass, $options);
