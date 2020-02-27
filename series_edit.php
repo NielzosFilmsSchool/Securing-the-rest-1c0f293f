@@ -20,18 +20,18 @@ try {
     $pdo = new PDO($dsn, $user, $pass, $options);
     $title = $_GET["title"];
     if(isset($_POST["submit"])) {
-        $stmt = $pdo->prepare(\
-            "UPDATE media
+        $stmt = $pdo->prepare(
+            'UPDATE media
             SET
-                title = '".$_POST["title"]."',
-                rating = ".$_POST["rating"].",
-                has_won_awards = ".$_POST["awards"].",
-                seasons = ".$_POST["seasons"].",
-                land_uitkomst = '".$_POST["country"]."',
-                taal = '".$_POST["lan"]."',
-                description = '".addslashes($_POST["desc"])."'
+                title = "'.$_POST['title'].'",
+                rating = '.$_POST['rating'].',
+                has_won_awards = '.$_POST['awards'].',
+                seasons = '.$_POST['seasons'].',
+                land_uitkomst = "'.$_POST['country'].'",
+                taal = "'.$_POST['lan'].'",
+                description = "'.addslashes($_POST['desc']).'"
             WHERE
-                title = '".$_GET["title"]."';"
+                title = "'.$_GET['title'].'";'
         );
         $stmt->execute();
         $title = $_POST["title"];
